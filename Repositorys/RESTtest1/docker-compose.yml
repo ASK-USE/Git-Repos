@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://ask:Schnebber69@db:5432/RESTtestdb
+
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: RESTtestdb
+      POSTGRES_USER: ask
+      POSTGRES_PASSWORD: Schnebber69
+    volumes:
+      - RESTtest_postgres_db:/var/lib/postgresql/data
+
+volumes:
+  RESTtest_postgres_db:
