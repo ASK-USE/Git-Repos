@@ -3,7 +3,7 @@
 from . import db
 
 class DataModel(db.Model):
-    __tablename__ = 'RESTtesttTable2'  # Tabellenname
+    __tablename__ = 'RESTtestTable2'  # Tabellenname
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.String(50), unique=True, nullable=False)
     asset_name = db.Column(db.String(50), nullable=False)
