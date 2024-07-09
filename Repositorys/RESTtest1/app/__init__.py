@@ -20,6 +20,6 @@ def create_app():
     api.add_resource(DataResource, '/data')
 
     with app.app_context():
-        db.create_all()
+         db.create_all()
 
     return app
